@@ -12,8 +12,17 @@ if not api_key:
 client = genai.Client(api_key=api_key)
 
 response = client.models.generate_content(
-    model="gemini-2.5-flash-lite",
+    model="gemini-2.5-flash",
     contents="Tell me about global warming?"
 )
 
 print(response.text)
+
+# Print the output number of tokens
+print("\n \n Total output tokens: ", response.usage_metadata.total_token_count)
+
+print("Total prompt tokens: ", response.usage_metadata.prompt_token_count)
+
+print("Candidate token count:", response.usage_metadata.candidates_token_count)
+
+print("Thoughts token count:", response.usage_metadata.thoughts_token_count)
