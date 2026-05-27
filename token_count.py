@@ -1,3 +1,4 @@
+from google.genai import types
 from google import genai
 import os
 from dotenv import load_dotenv
@@ -13,8 +14,11 @@ client = genai.Client(api_key=api_key)
 
 response = client.models.generate_content(
     model="gemini-2.5-flash",
-    contents="Tell me about global warming?"
-)
+    contents="Tell me about global warming?",
+    config=types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_budget=0) # Disable thinking
+            ),
+    )
 
 print(response.text)
 
