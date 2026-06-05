@@ -9,6 +9,7 @@ os.getenv("GEMINI_API_KEY")
 
 client = genai.Client()
 
+# Useful for chat type of applications
 response = client.models.generate_content_stream(
     model="gemini-2.5-flash",
     contents="Tell me about global warming?",
