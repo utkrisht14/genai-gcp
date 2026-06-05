@@ -6,4 +6,5 @@ requires-python = ">=3.14"
 dependencies = [
     "dotenv>=0.9.9",
     "google-genai>=2.6.0",
+    "pillow>=12.2.0",
 ]
