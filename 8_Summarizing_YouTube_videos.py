@@ -4,6 +4,7 @@ from google.genai import types
 from dotenv import load_dotenv
 
 load_dotenv()
+
 # Set API key
 os.getenv("GEMINI_API_KEY")
 
